@@ -29,7 +29,11 @@ public class Ben : MonoBehaviour
         }
         if (collision.transform.tag == "Enemigo")
         {
-            Invoke("Perder");
+            Invoke("Perder",0.2f);
         }
+    }
+    void Perder()
+    {
+        GameManager.Instancia.Perder();
     }
 }

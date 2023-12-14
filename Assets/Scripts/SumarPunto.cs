@@ -17,6 +17,10 @@ public class SumarPunto : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Invoke("ActualizarPuntuacion");
+        Invoke("ActualizarPuntuacion",0.2f);
+    }
+    void ActualizarPuntucacion()
+    {
+        GameManager.Instancia.ActualizarPuntuacion();
     }
 }
