@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text texto;
     [SerializeField] MoverEnemigo moverEnemigo;
     [SerializeField] float velocidad;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] audioClip;
 
     // Start is called before the first frame update
     private void Awake()
@@ -76,6 +78,8 @@ public class GameManager : MonoBehaviour
     public void ActualizarPuntuacion()
     {
         puntuacionActual+= 1;
+        audioSource.clip= audioClip[0];
+        audioSource.Play();
         if (puntuacionActual >= puntuacionMaxima)
         {
             puntuacionMaxima = puntuacionActual;

@@ -7,7 +7,8 @@ public class Ben : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator animator;
     [SerializeField] float alturaSalto;
-
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] audioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,9 @@ public class Ben : MonoBehaviour
         if (collision.transform.tag == "Enemigo")
         {
             Invoke("Perder",0.2f);
+            audioSource.clip = audioClip[0];
+            audioSource.Play();
+            
         }
     }
     void Perder()
