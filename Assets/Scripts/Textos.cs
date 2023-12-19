@@ -18,5 +18,6 @@ public class Textos : MonoBehaviour
     {
         actual.text = GameManager.Instancia.puntuacionActual.ToString();
         maxima.text = GameManager.Instancia.puntuacionMaxima.ToString();
+        tiempo.text = GameManager.Instancia.cronometro.ToString();
     }
 }

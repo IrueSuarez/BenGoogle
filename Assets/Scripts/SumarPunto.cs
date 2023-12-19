@@ -19,7 +19,7 @@ public class SumarPunto : MonoBehaviour
     {
         Invoke("ActualizarPuntuacion",0.2f);
     }
-    void ActualizarPuntucacion()
+    void ActualizarPuntuacion()
     {
         GameManager.Instancia.ActualizarPuntuacion();
     }
