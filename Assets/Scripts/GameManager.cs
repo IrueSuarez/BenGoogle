@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instancia;
     [SerializeField] public int puntuacionActual, puntuacionMaxima;
     [SerializeField] float tiempo;
-    [SerializeField] GameObject gameOver, boton, jugador, enemigo;
+    [SerializeField] GameObject gameOver, boton, jugador, enemigo, enemigoVolador;
+    [SerializeField] MoverEnemigo moverEnemigoVolador;
     [SerializeField] public bool cronometro;
     [SerializeField] TMP_Text texto;
     [SerializeField] MoverEnemigo moverEnemigo;
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
     {
         jugador.SetActive(false);
         enemigo.SetActive(false);
+        enemigoVolador.SetActive(false);
 
         gameOver.SetActive(true);
         boton.SetActive(true);
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
 
         jugador.SetActive(true);
         enemigo.SetActive(true);
+        enemigoVolador.SetActive(true);
 
         gameOver.SetActive(false);
         boton.SetActive(false);
@@ -90,6 +93,7 @@ public class GameManager : MonoBehaviour
     public void IniciarEnemigo()
     {
         moverEnemigo.IniciarEnemigo();
+        moverEnemigoVolador.IniciarEnemigo();
     }
 
     private void OnTriggerEnter(Collider other)

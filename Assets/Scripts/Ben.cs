@@ -35,6 +35,10 @@ public class Ben : MonoBehaviour
         {
              animator.SetBool("esta_en_suelo", true);
         }
+        if(Input.GetKeyDown("s"))
+        {
+            animator.SetTrigger("Agachado");
+        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
